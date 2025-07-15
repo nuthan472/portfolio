@@ -1,0 +1,53 @@
+.animated-gradient {
+  background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #1f4037);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 50% 50%; }
+  50% { background-position: 100% 50%; }
+  75% { background-position: 50% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes gradient-text {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient-text {
+  background-size: 300% 300%;
+  animation: gradient-text 6s ease infinite;
+}
+/* === Custom Border Reveal Animation === */
+@keyframes borderReveal {
+  0% {
+    clip-path: inset(0 100% 100% 0);
+  }
+  25% {
+    clip-path: inset(0 0 100% 0);
+  }
+  50% {
+    clip-path: inset(0 0 0 100%);
+  }
+  75% {
+    clip-path: inset(100% 0 0 0);
+  }
+  100% {
+    clip-path: inset(0);
+  }
+}
+
+.group-hover\\:border-reveal::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 2px solid currentColor;
+  border-radius: 0.75rem; /* same as Tailwind rounded-xl */
+  pointer-events: none;
+  z-index: 20;
+  animation: borderReveal 1s ease forwards;
+  clip-path: inset(0 100% 100% 0);
+}

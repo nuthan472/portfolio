@@ -1,0 +1,38 @@
+@layer utilities {
+  @keyframes fall {
+    0% {
+      background-position: 0 -200px;
+    }
+    100% {
+      background-position: 0 1000px;
+    }
+  }
+
+  .animate-fall {
+    animation: fall 10s linear infinite;
+  }
+
+  .bg-water-pattern {
+    background-image: radial-gradient(circle at 50% 0%, rgba(0, 255, 255, 0.1), transparent 70%);
+    background-repeat: repeat;
+    background-size: 100% 1000px;
+    mix-blend-mode: lighten;
+  }
+
+  @keyframes borderMove {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .animate-borderMove {
+    background-size: 200% 200%;
+    animation: borderMove 5s linear infinite;
+  }
+}

@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.animated-gradient {
+  background: linear-gradient(-45deg, #0f0c29, #005a5a, #013d4e, #6735f0);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 50% 50%; }
+  50% { background-position: 100% 50%; }
+  75% { background-position: 50% 50%; }
+  100% { background-position: 0% 50%; }
+}
+html {
+  scroll-behavior: smooth;
+}
+@layer utilities {
+  @keyframes fall {
+    0% {
+      background-position: 0 -200px;
+    }
+    100% {
+      background-position: 0 1000px;
+    }
+  }
+
+  .animate-fall {
+    animation: fall 10s linear infinite;
+  }
+
+  .bg-water-pattern {
+    background-image: radial-gradient(circle at 50% 0%, rgba(0, 255, 255, 0.1), transparent 70%);
+    background-repeat: repeat;
+    background-size: 100% 1000px;
+    mix-blend-mode: lighten;
+  }
+
+  .bg-cloud {
+    background: linear-gradient(
+      270deg,
+      #00ffff,
+      #ff00ff,
+      #00ffff,
+      #ffffff,
+      #00ffcc,
+      #ff00ff
+    );
+    background-size: 1400% 1400%;
+  }
+
+  @keyframes cloudBorder {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .animate-cloudBorder {
+    animation: cloudBorder 8s ease infinite;
+  }
+}
